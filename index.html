@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sanskriti Sonee — UI/UX Designer & Web Developer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f0f11;
+      --card: #1a1a1d;
+      --accent: #b39ddb;     
+      --accent-2: #8e7cc3;
+      --text: #f5f5f5;
+      --muted: #a1a1a1;
+      --radius: 14px;
+      --shadow: 0 6px 18px rgba(0,0,0,0.45);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Inter",sans-serif;
+      padding:32px;
+      line-height:1.6;
+    }
+    .container{max-width:1100px;margin:auto;display:grid;gap:28px;}
+    header{
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;
+    }
+    .brand{display:flex;gap:12px;align-items:center;}
+    .logo{
+      width:46px;height:46px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:700;font-size:18px;box-shadow:var(--shadow);
+    }
+    .brand h1{font-size:16px;}
+    nav{display:flex;gap:12px;flex-wrap:wrap;}
+    nav a{
+      text-decoration:none;color:var(--muted);
+      font-weight:600;padding:8px 12px;border-radius:10px;
+      transition:color .2s, background .2s;
+    }
+    nav a:hover{color:var(--accent);background:#1f1f21;}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 320px;gap:24px;
+      background:var(--card);
+      padding:28px;border-radius:var(--radius);
+      box-shadow:var(--shadow);align-items:center;
+    }
+    .hero-left h2{font-size:28px;color:var(--accent);}
+    .hero-left p{margin:14px 0 20px;color:var(--muted);}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:10px;
+      background:#2a2a2e;color:var(--text);font-weight:600;
+      text-decoration:none;transition:transform .15s ease,background .15s;
+    }
+    .btn:hover{background:#3a3a3e;transform:translateY(-2px);}
+    .profile-card{
+      text-align:center;background:#1c1c1f;border-radius:var(--radius);
+      padding:20px;box-shadow:var(--shadow);
+    }
+    .pf-photo{
+      width:160px;height:160px;border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      margin:auto;margin-bottom:12px;
+      display:grid;place-items:center;font-weight:700;color:#fff;font-size:20px;overflow:hidden;
+    }
+    .pf-photo img{width:100%;height:100%;object-fit:cover;}
+    .pf-role{color:var(--muted);font-weight:600;}
+    .pf-links{display:flex;gap:10px;margin-top:10px;justify-content:center;flex-wrap:wrap;}
+
+    section.card{
+      background:var(--card);
+      padding:22px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+    h3{margin-top:0;color:var(--accent);}
+    .muted{color:var(--muted);font-size:14px;}
+    .tag{
+      display:inline-block;
+      background:#26262a;color:var(--accent);
+      padding:5px 10px;border-radius:8px;font-size:12px;font-weight:600;
+    }
+
+    .exp{display:flex;flex-direction:column;gap:14px;}
+    .exp-item{display:flex;gap:14px;}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px;}
+    .exp-item p{margin:6px 0 0;color:var(--muted);font-size:14px;}
+
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+    .project{
+      background:#1c1c20;
+      padding:16px;border-radius:var(--radius);
+      border:1px solid #2a2a2d;
+      display:flex;flex-direction:column;gap:10px;
+      transition:transform .2s;
+    }
+    .project:hover{transform:translateY(-4px);}
+    .project .tags{display:flex;gap:8px;flex-wrap:wrap;}
+    .project a.link{
+      text-decoration:none;border:1px dashed #353539;color:var(--muted);
+      border-radius:8px;padding:8px;text-align:center;font-size:13px;
+      margin-top:auto;
+    }
+    .project a.link:hover{color:var(--accent);border-color:var(--accent);}
+
+    footer{text-align:center;color:var(--muted);font-size:13px;padding:16px;}
+
+    .contact-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .contact-item {
+      margin-bottom: 12px;
+    }
+    .contact-item strong {
+      color: var(--accent);
+      display:block;
+      margin-bottom:4px;
+    }
+    .contact-item a {
+      color: var(--text);
+      text-decoration:none;
+    }
+    .contact-item a:hover {
+      color: var(--accent);
+    }
+
+    @media(max-width:850px){
+      .hero{grid-template-columns:1fr;}
+      .grid-2{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+
+    <header>
+      <div class="brand">
+        <div class="logo">SS</div>
+        <div>
+          <h1>Sanskriti Sonee</h1>
+          <div class="muted">UI/UX Designer · Web Developer · AI Enthusiast</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Designing digital experiences that connect innovation with usability.</h2>
+        <p>I’m a UI/UX designer and web developer from Hyderabad. I craft accessible, aesthetic and research-driven user interfaces.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://drive.google.com/file/d/1iXyr7gEJkUye2-0yOC9Gbqs1bVfTk_a4/view?usp=drivesdk" target="_blank">Download Resume</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="pf-photo">SS <!-- Replace with <img src="photo.jpg" alt="Sanskriti Sonee"> --></div>
+        <div class="pf-role">UI/UX Designer • Web Developer</div>
+        <div class="pf-links">
+          <a class="btn" href="https://linkedin.com/in/sanskriti-sonee-749509266" target="_blank">LinkedIn</a>
+          <a class="btn" href="https://github.com/sanskritisonee" target="_blank">GitHub</a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <h3>About</h3>
+        <p class="muted">I love transforming complex ideas into clean, simple interfaces. Combining design thinking with AI & data-driven insights helps me create products that are both intuitive and intelligent.</p>
+        <div style="margin-top:12px;">
+          <strong>Core Skills</strong><br><br>
+          <span class="tag">Figma</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">React</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Prototyping</span>
+        </div>
+      </div>
+
+      <div class="card" id="experience">
+        <h3>Experience</h3>
+        <div class="exp">
+          <div class="exp-item">
+            <div class="dot"></div>
+            <div>
+              <div><strong>UI/UX Designer — Dev Tech AI</strong> <span class="muted">· 2025 – Present</span></div>
+              <p>Worked as a UI/UX Designer developing an application, crafting UI flows and Figma designs with developers.</p>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="dot"></div>
+            <div>
+              <div><strong>Web Developer Intern — Cloudbox99</strong> <span class="muted">· 2024</span></div>
+              <p>Built responsive websites using React, HTML, CSS, and JS. Created a Figma prototype for a client app improving user workflows.</p>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="dot"></div>
+            <div>
+              <div><strong>Community Organizer — Global AI</strong> <span class="muted">· 2025 – Present</span></div>
+              <p>Host and organize workshops on prompt engineering and AI under Global AI Hyderabad community.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="projects">
+      <h3>Featured Projects</h3>
+      <div class="projects-grid">
+
+        <div class="project">
+          <h4>Login Pages — Figma Prototype</h4>
+          <p class="muted">Designed multiple login and onboarding screens on Figma, focusing on visual consistency and intuitive user flow.</p>
+          <div class="tags"><span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Prototype</span></div>
+          <a href="https://www.figma.com/proto/oZLOXPMJTGXmx5agzPTjpr/Untitled?node-id=80-3&starting-point-node-id=80%3A3&t=JRjfQS2heuCT9ZJs-1" class="link" target="_blank">Figma Link </a>
+        </div>
+
+        <div class="project">
+          <h4>MyOrigins — Figma Prototype</h4>
+          <p class="muted">Created a complete prototype for “MyOrigins” in Figma, focusing on user journey, storytelling, and modern UI structure.</p>
+          <div class="tags"><span class="tag">Figma</span><span class="tag">Prototyping</span></div>
+          <a href="https://www.figma.com/design/GxXo8ryxF2Cuh9XpnC3XR8/myorigins.ai?node-id=0-1&t=zp32dCXy7f0FIWvx-1" class="link" target="_blank">Figma Link </a>
+        </div>
+
+        <div class="project">
+          <h4>Sarascan Website</h4>
+          <p class="muted">Developed the frontend for a business IT solutions website using HTML, CSS, and JavaScript — focused on responsive layouts and modern design.</p>
+          <div class="tags"><span class="tag">Frontend</span><span class="tag">HTML/CSS/JS</span></div>
+          <a href="https://www.sarascan.ca/" class="link" target="_blank">GitHub Link </a>
+        </div>
+
+        <div class="project">
+          <h4>RideSmart Website</h4>
+          <p class="muted">Built an interactive educational website with accessible UI and readable layout. Enhanced user engagement with structured navigation.</p>
+          <div class="tags"><span class="tag">Web Design</span><span class="tag">HTML/CSS/JS</span></div>
+          <a href="https://github.com/sanskritisonee/ride-smart" class="link" target="_blank">GitHub Link </a>
+        </div>
+
+        <div class="project">
+          <h4>Weather Application</h4>
+          <p class="muted">Created a responsive React-based weather app using the OpenWeather API, offering real-time updates and clean, intuitive UI design.</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">API</span></div>
+          <a href="https://github.com/sanskritisonee/weather-.git" class="link" target="_blank">GitHub Link </a>
+        </div>
+
+        <div class="project">
+          <h4>Multilingual Offensive Language Detection</h4>
+          <p class="muted">AI system using XLM-RoBERTa & Whisper ASR for multilingual content moderation. FastAPI backend for inference.</p>
+          <div class="tags"><span class="tag">NLP</span><span class="tag">FastAPI</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contact-card" id="contact">
+      <h3>Contact Details</h3>
+      <div class="contact-item">
+        <strong>📞 Phone</strong>
+        <a href="tel:+910000000000">+91-7396444674</a>
+      </div>
+      <div class="contact-item">
+        <strong>💼 LinkedIn</strong>
+        <a href="https://linkedin.com/in/sanskriti-sonee-749509266" target="_blank">LinkedIn</a>
+      </div>
+      <div class="contact-item">
+        <strong>💻 GitHub</strong>
+        <a href="https://github.com/sanskritisonee" target="_blank">GitHub</a>
+      </div>
+      <div class="contact-item">
+        <strong>📍 Location</strong>
+        Hyderabad, India
+      </div>
+    </section>
+
+    <footer>© <span id="year"></span> Sanskriti Sonee · Designed with precision and passion ✨</footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
